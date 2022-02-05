@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="jquery.passwordstrength.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,28 +15,46 @@
 
     <div id="bg"></div>
 
-<form>
+<form onsubmit="validation()">
   <div class="form-field">
     <input type="username" placeholder="Username" required/>
   </div>
 
   <div class="form-field">
-    <input type="email" placeholder="Email" required/>
+    <input type="email" placeholder="Email" id="email" required/>
   </div>
   <div class="form-field">
-    <input type="tel" placeholder="Phone number" required/>
+    <input type="tel" placeholder="Phone number" id="phno" />
   </div>
   
   <div class="form-field">
-    <input type="password" placeholder="Password" required/>                         </div>
+    <label for="pwd">Password</label>
+    <div class="form-group has-error has-feedback">
+    <input type="password" class="form-control" placeholder="Password" id="pwd" aria-describedby="Error2Status" required/>                         </div>
+    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+    <span id="Error2Status" class="sr-only">(error)</span>    
+  </div>
+ 
+
 
     <div class="form-field">
-        <input type="password" placeholder="Confirm Password" required/>                         </div>
+        <input type="password" placeholder="Confirm Password" id="pwc" required/>                         </div>
   
   <div class="form-field">
     <button class="btn" type="submit">Sign Up</button>
   </div>
 </form>
+
+<script src= "https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./jquery.passwordstrength.js"></script>
+<script>
+  //$('#pwd').passwordstrength
+  $('#pwd').passwordstrength();
+</script>
+
+
+<script src="signup.js"></script>
     
 </body>
 </html>
